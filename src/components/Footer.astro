@@ -1,0 +1,79 @@
+<footer>
+    <div class="footer-content">
+        <div>
+            <a href="#inicio" class="logo">MARVEL<span>.</span></a>
+            <p>
+                Catálogo de películas del Universo
+                Cinematográfico de Marvel.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#peliculas">Películas</a>
+            <a href="#estadisticas">Estadísticas</a>
+        </div>
+    </div>
+</footer>
+<style>
+    footer {
+        padding: 45px 6% 25px;
+        border-top: 1px solid #25252d;
+        background: #09090c;
+    }
+
+    .footer-content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+        padding-bottom: 35px;
+    }
+
+    .logo {
+        color: #ffffff;
+        font-size: 1.4rem;
+        font-weight: 900;
+        letter-spacing: 2px;
+        text-decoration: none;
+    }
+
+    .logo span {
+        color: #e62429;
+    }
+
+    .footer-content p {
+        max-width: 350px;
+        margin-top: 12px;
+        color: #777780;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 25px;
+    }
+
+    .footer-links a {
+        color: #9999a3;
+        font-size: 0.85rem;
+        transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+        color: #ffffff;
+    }
+
+    @media (max-width: 600px) {
+        .footer-content {
+            flex-direction: column;
+        }
+
+        .footer-links {
+            flex-direction: column;
+            gap: 12px;
+        }
+    }
+</style>

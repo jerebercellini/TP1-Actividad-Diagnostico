@@ -1,0 +1,107 @@
+---
+import { movies } from "../data/movies.js";
+
+const totalMovies = movies.length;
+const genres = new Set(
+    movies.map((movie) => movie.genre)
+);
+
+const oldestMovie = movies.reduce(
+    (oldest, movie) =>
+        movie.year < oldest.year ? movie : oldest
+);
+
+const newestMovie = movies.reduce(
+    (newest, movie) =>
+        movie.year > newest.year ? movie : newest
+);
+---
+
+<section class="stats-section" id="estadisticas">
+    <div class="section-header">
+        <small>El universo</small>
+        <h2>Marvel en números</h2>
+    </div>
+    <div class="stats">
+        <div class="stat">
+            <strong>{totalMovies}</strong>
+            <span>Películas</span>
+        </div>
+        <div class="stat">
+            <strong>{genres.size}</strong>
+            <span>Géneros</span>
+        </div>
+        <div class="stat">
+            <strong>{oldestMovie.year}</strong>
+            <span>Primera película</span>
+        </div>
+        <div class="stat">
+            <strong>{newestMovie.year}</strong>
+            <span>Última película</span>
+        </div>
+    </div>
+</section>
+<style>
+    .stats-section {
+        padding: 80px 6%;
+    }
+
+    .section-header {
+        margin-bottom: 35px;
+    }
+
+    .section-header small {
+        color: #e62429;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .section-header h2 {
+        margin-top: 8px;
+        color: #ffffff;
+        font-size: 2.5rem;
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .stat {
+        padding: 30px;
+        border: 1px solid #25252d;
+        border-radius: 8px;
+        background: #141419;
+        text-align: center;
+    }
+
+    .stat strong {
+        display: block;
+        margin-bottom: 8px;
+        color: #e62429;
+        font-size: 2.5rem;
+    }
+
+    .stat span {
+        color: #9999a3;
+    }
+
+    @media (max-width: 700px) {
+        .stats-section {
+            padding: 60px 5%;
+        }
+
+        .stats {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 450px) {
+        .stats {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

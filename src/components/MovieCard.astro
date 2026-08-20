@@ -1,0 +1,88 @@
+---
+const { movie } = Astro.props;
+---
+
+<article class="movie-card" data-name={movie.name.toLowerCase()} data-genre={movie.genre} data-year={movie.year}>
+    <div class="movie-poster">
+        <img src={movie.image} alt={`Poster de ${movie.name}`} loading="lazy"/>
+    </div>
+    <div class="movie-info">
+        <div class="movie-top">
+            <h3>{movie.name}</h3>
+            <span class="year">{movie.year}</span>
+        </div>
+
+        <span class="genre">{movie.genre}</span>
+        <p>{movie.description}</p>
+    </div>
+</article>
+<style>
+    .movie-card {
+        overflow: hidden;
+        border: 1px solid #25252d;
+        border-radius: 8px;
+        background: #141419;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .movie-card:hover {
+        transform: translateY(-6px);
+        border-color: #e62429;
+    }
+
+    .movie-poster {
+        width: 100%;
+        aspect-ratio: 2 / 3;
+        overflow: hidden;
+    }
+
+    .movie-poster img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .movie-card:hover .movie-poster img {
+        transform: scale(1.05);
+    }
+
+    .movie-info {
+        padding: 18px;
+    }
+
+    .movie-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .movie-top h3 {
+        margin: 0;
+        color: #ffffff;
+        font-size: 1.1rem;
+    }
+
+    .year {
+        flex-shrink: 0;
+        color: #9999a3;
+        font-size: 0.8rem;
+    }
+
+    .genre {
+        display: inline-block;
+        margin-top: 8px;
+        margin-bottom: 12px;
+        color: #e62429;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    .movie-info p {
+        margin: 0;
+        color: #aaaab2;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+</style>

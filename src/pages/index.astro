@@ -2,6 +2,9 @@
 import NavBar from "../components/NavBar.astro"
 import Start from "../components/Start.astro"
 import "../styles/global.css"
+import MovieGrid from "../components/MovieGrid.astro";
+import Stats from "../components/Stats.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
@@ -15,6 +18,11 @@ import "../styles/global.css"
 	</head>
 	<body>
 		<NavBar />
-		<Start />
+		<main>
+			<Start />
+            <MovieGrid />
+            <Stats />
+		</main>
+	    <Footer />
 	</body>
 </html>
