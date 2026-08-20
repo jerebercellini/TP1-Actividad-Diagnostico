@@ -1,0 +1,92 @@
+<section class="hero" id="inicio">
+    <div class="hero-content">
+        <span class="hero-label">Universo cinematográfico</span>
+        <h1>
+            Marvel<br />
+            <span>Movies</span>
+        </h1>
+        <p>Explorá las películas del Universo Cinematográfico de Marvel. Buscá tus favoritas, filtrá por fase y descubrí nuevos títulos.</p>
+        <a href="#peliculas" class="hero-button">Explorar películas</a>
+    </div>
+</section>
+<style>
+    .hero {
+        min-height: 40em;
+        display: flex;
+        align-items: center;
+        padding: 20em 6%;
+        background:
+            linear-gradient(90deg,
+                rgba(11, 11, 15, 1) 0%,
+                rgba(11, 11, 15, 0.85) 45%,
+                rgba(11, 11, 15, 0.25) 100%
+            ),
+            url("https://images.unsplash.com/photo-1531259683007-016a7b628fc3?auto=format&fit=crop&w=1800&q=80");
+
+        background-size: cover;
+        background-position: center;
+    } 
+
+    .hero-label {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 7px 14px;
+        border: 1px solid #e62429;
+        border-radius: 30px;
+        color: #e62429;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .hero h1 {
+        margin-bottom: 20px;
+        color: #ffffff;
+        font-size: clamp(3rem, 7vw, 6rem);
+        line-height: 0.9;
+        text-transform: uppercase;
+    }
+
+    .hero h1 span {
+        color: #e62429;
+    }
+
+    .hero p {
+        max-width: 550px;
+        margin-bottom: 30px;
+        color: #c7c7cd;
+        line-height: 1.7;
+    }
+
+    .hero-button {
+        display: inline-block;
+        padding: 14px 25px;
+        border-radius: 5px;
+        background: #e62429;
+        color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .hero-button:hover {
+        background: #ff3036;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 700px) {
+        .hero {
+            min-height: 70vh;
+            padding: 70px 5%;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .hero h1 {
+            font-size: 3.2rem;
+        }
+    }
+</style>
